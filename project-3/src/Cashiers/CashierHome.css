@@ -1,0 +1,83 @@
+.cashier-home {
+    display: flex;
+    height: 90vh;
+    width: 95vw;
+}
+
+.order-list-container {
+    width: 25%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.order-list {
+    list-style-type: none;
+    padding: 0;
+    height: 70%;
+    overflow-y: auto;
+}
+
+.order-list li {
+    border-bottom: 1px solid black;
+    color: black;
+    padding: 10px;
+}
+
+.buttons {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 75%;
+}
+
+.button-container {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+}
+
+.button-container button {
+    flex-grow: 1;
+    margin: 10px;
+    height: 75px;
+    min-width: 100px;
+    text-align: center;
+    white-space: normal;
+}
+
+.adjust-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.adjust-buttons button {
+    flex-grow: 1;
+}
+
+.pay-button {
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+
+.pay-button button {
+    background-color: green;
+    font-weight: bold;
+    width: 100%
+}
+
+
+h2 {
+    color: black;
+    margin-top: 0;
+    text-align: center;
+}
