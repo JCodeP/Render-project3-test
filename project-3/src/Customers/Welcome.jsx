@@ -1,28 +1,18 @@
 import React from "react";
 import "./Customer.css";
-import {useNavigate, Routes, Route, Outlet} from "react-router-dom";
-import OrderComplete from "./OrderComplete";
-//Add all components for sub routes
+import {useNavigate} from "react-router-dom";
 
 function Welcome() {
     const navigate = useNavigate();
 
     const redirect = () => {
-        navigate("OrderComplete");
+        navigate("../ordercomplete");
     }
 
     return(
-        <>
-            <div className = "ellipse" onClick = {redirect}>
-                    Touch Here To Begin
-            </div>
-
-            <Routes>
-                <Route path = "OrderComplete" element = {<OrderComplete />} />
-            </Routes>
-
-            <Outlet />
-        </>
+        <div className = "ellipse" onClick = {redirect}>
+            Touch Here To Begin
+        </div>
     );
 }
 
