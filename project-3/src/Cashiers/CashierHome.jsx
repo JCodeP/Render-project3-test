@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { useMenu } from "../MenuContext";
 
@@ -6,6 +7,7 @@ import "./CashierHome.css";
 
 function CashierHome() {
 
+    const navigate = useNavigate();
     const { menuItems, addMenuItem, removeMenuItem } = useMenu();
     const [order, setOrder] = useState([]);
     const [selectedIndex, setSelectedIndex] = useState(null);
@@ -45,6 +47,10 @@ function CashierHome() {
         return order.reduce((total, item) => total + item.price, 0).toFixed(2);
     }, [order]);
 
+    const submitScreen = () => {
+        navigate("/cashiers/submit", { state: { order } });
+    }
+
     return (
         <div className="cashier-home">
             <div className="order-list-container">
@@ -65,7 +71,7 @@ function CashierHome() {
                     <button onClick={duplicateSelectedItem}>Duplicate</button>
                 </div>
                 <div className="pay-button">
-                    <button>Pay: ${getTotalPrice}</button>
+                    <button onClick={submitScreen}>Pay: ${getTotalPrice}</button>
                 </div>
             </div>
             <div className="buttons">
