@@ -8,10 +8,30 @@ function CashierHome() {
 
     const { menuItems, addMenuItem, removeMenuItem } = useMenu();
     const [order, setOrder] = useState([]);
+    const [selectedIndex, setSelectedIndex] = useState(null);
 
     const addItemToOrder = (item) => {
         setOrder((prevOrder) => [...prevOrder, item]);
     };
+
+    const deleteSelectedItem = () => {
+        if (selectedIndex === null) {
+            return;
+        }
+
+        setOrder((prevOrder) => prevOrder.filter((_, index) => index !== selectedIndex));
+        setSelectedIndex(null);
+    };
+
+    const duplicateSelectedItem = () => {
+        if (selectedIndex === null) {
+            return;
+        }
+
+        addItemToOrder(order[selectedIndex]);
+
+        setSelectedIndex(null);
+    }
 
     const itemsByCategory = menuItems.reduce((acc, item) => {
         if (!acc[item.category]) {
@@ -31,14 +51,18 @@ function CashierHome() {
                 <h2>Current Order</h2>
                 <ul className="order-list">
                     {order.map((item, index) => (
-                        <li key={index}>
+                        <li
+                            key={index}
+                            className={index === selectedIndex ? "selected" : ""}
+                            onClick={() => setSelectedIndex(index)}
+                        >
                             {item.name} - ${item.price.toFixed(2)}
                         </li>
                     ))}
                 </ul>
                 <div className="adjust-buttons">
-                    <button>Delete</button>
-                    <button>Duplicate</button>
+                    <button onClick={deleteSelectedItem}>Delete</button>
+                    <button onClick={duplicateSelectedItem}>Duplicate</button>
                 </div>
                 <div className="pay-button">
                     <button>Pay: ${getTotalPrice}</button>
