@@ -5,6 +5,11 @@ import { useMenu } from "../MenuContext";
 
 import "./CashierHome.css";
 
+/**
+ * @author Kade Lieder 
+ * 
+ * The landing page for the cashier. Allows the cashier to add combos, appetizers, and drinks to the order
+ */
 function CashierHome() {
 
     const navigate = useNavigate();
@@ -12,10 +17,12 @@ function CashierHome() {
     const [order, setOrder] = useState([]);
     const [selectedIndex, setSelectedIndex] = useState(null);
 
+    // Adds to order list
     const addItemToOrder = (item) => {
         setOrder((prevOrder) => [...prevOrder, item]);
     };
 
+    // Deletes highlighted item from order
     const deleteSelectedItem = () => {
         if (selectedIndex === null) {
             return;
@@ -25,6 +32,7 @@ function CashierHome() {
         setSelectedIndex(null);
     };
 
+    // Duplicates highlighted item in order
     const duplicateSelectedItem = () => {
         if (selectedIndex === null) {
             return;
@@ -35,6 +43,7 @@ function CashierHome() {
         setSelectedIndex(null);
     }
 
+    // Organizes items by category
     const itemsByCategory = menuItems.reduce((acc, item) => {
         if (!acc[item.category]) {
             acc[item.category] = [];
@@ -43,10 +52,12 @@ function CashierHome() {
         return acc;
     }, {});
 
+    // Sums price of items in order
     const getTotalPrice = useMemo(() => {
         return order.reduce((total, item) => total + item.price, 0).toFixed(2);
     }, [order]);
 
+    // Navigates to submit screen
     const submitScreen = () => {
         navigate("/cashiers/submit", { state: { order } });
     }
