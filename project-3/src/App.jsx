@@ -27,7 +27,7 @@ function App() {
           <Route path="/managers" element={<ManagerHome />} />
           <Route path="/cashiers" element={<CashierHome />} />
           <Route path="/cashiers/submit" element={<CashierSubmitScreen />} />
-          <Route path="/customers" element={<CustomerHome />} />
+          <Route path="/customers/*" element={<CustomerHome />} />
           <Route path="/menu" element={<MenuBoard />} />
         </Routes>
       </Router>
