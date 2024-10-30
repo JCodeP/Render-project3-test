@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Homepage/Header.jsx";
 import SiteNavBar from "./Homepage/SiteNavBar.jsx";
 
+
 import ManagerHome from "./Managers/ManagerHome.jsx";
 import CashierHome from "./Cashiers/CashierHome.jsx";
 import CustomerHome from "./Customers/CustomerHome.jsx";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/menu" element={<h1>Menu</h1>} />
       </Routes>
     </Router>
+
   );
 }
 

@@ -1,5 +1,8 @@
-import React from 'react'
-import "./ManagerHome.css"
+import React from 'react';
+import "./ManagerHome.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import EmployeePage from './EmployeePage';
+import ManagerNavBar from './ManagerNavBar';
 
 function ManagerHome() {
     return (
@@ -7,4 +10,4 @@ function ManagerHome() {
     );
 }
 
-export default ManagerHome;
+export default ManagerHome
