@@ -75,6 +75,10 @@
     width: 100%
 }
 
+.selected {
+    background-color: gray;
+}
+
 
 h2 {
     color: black;
