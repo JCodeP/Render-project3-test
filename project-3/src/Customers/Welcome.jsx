@@ -6,7 +6,7 @@ function Welcome() {
     const navigate = useNavigate();
 
     const redirect = () => {
-        navigate("../ordercomplete");
+        navigate("../menu");
     }
 
     return(
