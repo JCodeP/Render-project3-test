@@ -9,29 +9,6 @@ function CashierSubmitScreen() {
     const navigate = useNavigate();
     const { order } = location.state || { order: [] };
 
-    const [selectedIndex, setSelectedIndex] = useState(null);
-
-    // Deletes highlighted item from order
-    const deleteSelectedItem = () => {
-        if (selectedIndex === null) {
-            return;
-        }
-
-        setOrder((prevOrder) => prevOrder.filter((_, index) => index !== selectedIndex));
-        setSelectedIndex(null);
-    };
-
-    // Duplicates highlighted item in order
-    const duplicateSelectedItem = () => {
-        if (selectedIndex === null) {
-            return;
-        }
-
-        addItemToOrder(order[selectedIndex]);
-
-        setSelectedIndex(null);
-    }
-
     const getTotalPrice = useMemo(() => {
         return order.reduce((total, item) => total + item.price, 0).toFixed(2);
     }, [order]);
@@ -40,20 +17,21 @@ function CashierSubmitScreen() {
         <div className="submit-screen">
             <div className="order-list-container">
                 <h2>Order Summary</h2>
-                <ul className="order-list">
+                <ul className="pay-order-list">
                     {order.map((item, index) => (
-                        <li
-                            key={index}
-                            className={index === selectedIndex ? "selected" : ""}
-                            onClick={() => setSelectedIndex(index)}>
+                        <li key={index}>
                             {item.name} - ${item.price.toFixed(2)}
                         </li>
                     ))}
                 </ul>
-                <div className="total">
-                    <strong>Total: ${getTotalPrice}</strong>
+                <div className="back-button">
+                    <button onClick={() => navigate(-1)}>Back to Order</button>
                 </div>
-                <button onClick={() => navigate(-1)}>Back to Order</button>
+            </div>
+            <div className="buttons">
+                <div className="button-container">
+                    <button>{getTotalPrice}</button>
+                </div>
             </div>
         </div>
     );

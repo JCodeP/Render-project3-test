@@ -12,19 +12,27 @@
     margin-right: 20px;
 }
 
-.order-list {
+.pay-order-list {
     list-style-type: none;
     padding: 0;
-    height: 70%;
+    height: 81.6%;
     overflow-y: auto;
 }
 
-.order-list li {
+.pay-order-list li {
     border-bottom: 1px solid black;
     color: black;
     padding: 10px;
 }
 
-.selected {
-    background-color: gray;
+.back-button {
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+
+.back-button button {
+    background-color: green;
+    font-weight: bold;
+    width: 100%
 }
