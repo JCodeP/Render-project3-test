@@ -36,3 +36,31 @@
     font-weight: bold;
     width: 100%
 }
+
+.pay-buttons {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 75%;
+}
+
+.pay-button-container {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.pay-button-container button {
+    font-size: 2em;
+    font-weight: bold;
+    flex-grow: 1;
+    margin: 10px;
+    height: 75px;
+    min-width: 100px;
+    text-align: center;
+    place-items: center;
+    white-space: normal;
+}

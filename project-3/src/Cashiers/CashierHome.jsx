@@ -45,6 +45,10 @@ function CashierHome() {
         setSelectedIndex(null);
     }
 
+    const clearOrder = () => {
+        setOrder([]);
+    };
+
     // Organizes items by category
     const itemsByCategory = menuItems.reduce((acc, item) => {
         if (!acc[item.category]) {
@@ -67,7 +71,7 @@ function CashierHome() {
     return (
         <div className="cashier-home">
             <div className="order-list-container">
-                <h2>Current Order</h2>
+                <h2>Current Order - Click to Select</h2>
                 <ul className="order-list">
                     {order.map((item, index) => (
                         <li
@@ -82,6 +86,7 @@ function CashierHome() {
                 <div className="adjust-buttons">
                     <button onClick={deleteSelectedItem}>Delete</button>
                     <button onClick={duplicateSelectedItem}>Duplicate</button>
+                    <button className="cancel-button" onClick={clearOrder}>Cancel</button>
                 </div>
                 <div className="pay-button">
                     <button onClick={submitScreen}>Pay: ${getTotalPrice}</button>

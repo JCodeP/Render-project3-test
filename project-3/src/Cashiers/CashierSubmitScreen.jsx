@@ -18,7 +18,7 @@ function CashierSubmitScreen() {
     return (
         <div className="submit-screen">
             <div className="order-list-container">
-                <h2>Order Summary</h2>
+                <h2>Current Order - {getTotalPrice}</h2>
                 <ul className="pay-order-list">
                     {order.map((item, index) => (
                         <li key={index}>
@@ -30,9 +30,15 @@ function CashierSubmitScreen() {
                     <button onClick={() => navigate(-1)}>Back to Order</button>
                 </div>
             </div>
-            <div className="buttons">
-                <div className="button-container">
-                    <button>{getTotalPrice}</button>
+            <div className="pay-buttons">
+                <div className="pay-button-container">
+                    <button>Credit / Debit Card</button>
+                </div>
+                <div className="pay-button-container">
+                    <button>Cash</button>
+                </div>
+                <div className="pay-button-container">
+                    <button>Gift Card</button>
                 </div>
             </div>
         </div>
