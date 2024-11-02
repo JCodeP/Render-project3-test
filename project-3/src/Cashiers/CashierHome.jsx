@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { useMenu } from "../MenuContext";
 
+import { useOrder } from "./CashierOrderContext";
+
 import "./CashierHome.css";
 
 /**
@@ -14,7 +16,7 @@ function CashierHome() {
 
     const navigate = useNavigate();
     const { menuItems, addMenuItem, removeMenuItem } = useMenu();
-    const [order, setOrder] = useState([]);
+    const { order, setOrder } = useOrder();
     const [selectedIndex, setSelectedIndex] = useState(null);
 
     // Adds to order list

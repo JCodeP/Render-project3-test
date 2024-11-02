@@ -2,12 +2,14 @@
 import React, { useState, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+import { useOrder } from "./CashierOrderContext";
+
 import "./CashierSubmitScreen.css";
 
 function CashierSubmitScreen() {
     const location = useLocation();
     const navigate = useNavigate();
-    const { order } = location.state || { order: [] };
+    const { order } = useOrder();
 
     const getTotalPrice = useMemo(() => {
         return order.reduce((total, item) => total + item.price, 0).toFixed(2);
