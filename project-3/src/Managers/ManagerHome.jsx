@@ -28,4 +28,4 @@ function ManagerHome() {
     );
 }
 
-export default ManagerHome;
+export default ManagerHome
