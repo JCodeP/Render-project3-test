@@ -25,7 +25,7 @@ function App() {
             </>
           }
           />
-          <Route path="/managers" element={<ManagerHome />} />
+          <Route path="/managers/*" element={<ManagerHome />} />
           <Route path="/cashiers/*" element={
             <CashierOrderProvider>
               <Routes>
