@@ -7,19 +7,19 @@ function Sides() {
             <h2>Sides</h2>
             <ul>
                 <li>
-                    <img src="/chowmein.webp" alt="Chow Mein"/>
+                    <img src="/rsc/menu_icons/chowmein.webp" alt="Chow Mein"/>
                     <span>Chow Mein</span>
                 </li>
                 <li>
-                    <img src="/friedrice.webp" alt="Fried Rice"/>
+                    <img src="/rsc/menu_icons/friedrice.webp" alt="Fried Rice"/>
                     <span>Fried Rice</span>
                 </li>
                 <li>
-                    <img src="/whiterice.webp" alt="Steamed White Rice"/>
+                    <img src="/rsc/menu_icons/whiterice.webp" alt="Steamed White Rice"/>
                     <span>Steamed White Rice</span>
                 </li>
                 <li>
-                    <img src="/supergreens.webp" alt="Super Greens"/>
+                    <img src="/rsc/menu_icons/supergreens.webp" alt="Super Greens"/>
                     <span>Super Greens</span>
                 </li>
             </ul>
